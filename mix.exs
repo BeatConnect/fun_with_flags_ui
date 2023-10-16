@@ -1,14 +1,14 @@
 defmodule FunWithFlagsUi.Mixfile do
   use Mix.Project
 
-  @version "0.8.1"
+  @version "0.9.0"
 
   def project do
     [
       app: :fun_with_flags_ui,
       source_url: "https://github.com/tompave/fun_with_flags_ui",
       version: @version,
-      elixir: "~> 1.11",
+      elixir: "~> 1.13",
       elixirc_paths: elixirc_paths(Mix.env),
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -47,7 +47,7 @@ defmodule FunWithFlagsUi.Mixfile do
       {:fun_with_flags, github: "BeatConnect/fun_with_flags", branch: "no_application"},
       {:redix, "~> 1.0", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: :dev},
-      {:credo, "~> 1.6", only: :dev, runtime: false},
+      {:credo, "~> 1.7", only: :dev, runtime: false},
     ]
   end
 

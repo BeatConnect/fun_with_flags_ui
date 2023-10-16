@@ -4,6 +4,7 @@ defmodule FunWithFlags.UI.Templates do
   require EEx
   alias FunWithFlags.Flag
   alias FunWithFlags.UI.Utils
+  import FunWithFlags.UI.HTMLEscape, only: [html_escape: 1]
 
   @templates [
     _head: "_head",
@@ -75,7 +76,8 @@ defmodule FunWithFlags.UI.Templates do
     Path.join(conn.assigns[:namespace], path)
   end
 
-  def html_safe(val) do
+
+  def url_safe(val) do
     val
     |> to_string()
     |> URI.encode()
